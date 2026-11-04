@@ -1,0 +1,66 @@
+{
+  "expo": {
+    "name": "StrideSmart",
+    "slug": "stridesmart-running-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "stridesmart",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.stridesmart.running",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "StrideSmart uses your GPS location to draw your live run path, calculate pace and distance, and generate loops from your starting point.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "StrideSmart needs background location access so your run continues tracking accurately when you lock your phone or listen to music.",
+        "NSHealthShareUsageDescription": "StrideSmart optionally reads your Heart Rate and Resting Heart Rate from Apple Health to display physiological insights on your post-run summary.",
+        "NSHealthUpdateUsageDescription": "StrideSmart writes your completed runs (distance, duration, active calories, and GPS route) to Apple Health so your Activity rings stay updated.",
+        "UIBackgroundModes": [
+          "location",
+          "fetch",
+          "remote-notification"
+        ]
+      },
+      "entitlements": {
+        "com.apple.developer.healthkit": true,
+        "com.apple.developer.healthkit.access": [
+          "health-records"
+        ]
+      }
+    },
+    "android": {
+      "package": "com.stridesmart.running",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_LOCATION",
+        "POST_NOTIFICATIONS",
+        "android.permission.health.READ_HEART_RATE",
+        "android.permission.health.READ_RESTING_HEART_RATE",
+        "android.permission.health.WRITE_EXERCISE",
+        "android.permission.health.WRITE_EXERCISE_ROUTE",
+        "android.permission.health.WRITE_TOTAL_CALORIES_BURNED",
+        "android.permission.health.WRITE_DISTANCE"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow StrideSmart to track your runs seamlessly even when your screen is locked.",
+          "isIosBackgroundLocationEnabled": true,
+          "isAndroidBackgroundLocationEnabled": true
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#CCFF00"
+        }
+      ],
+      "react-native-health",
+      "react-native-health-connect"
+    ]
+  }
+}

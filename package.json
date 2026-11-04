@@ -1,0 +1,30 @@
+{
+  "name": "stridesmart-running-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Strava-style cross-platform running app with smart route generation, live GPS tracking, animated replay, weather & calendar best-time recommendations, and Apple Health / Health Connect sync.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5173 --host",
+    "web": "vite --port 5173 --host",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --port 5173",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^0.475.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.16",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "~5.7.2",
+    "vite": "^6.1.0",
+    "vitest": "^3.0.5"
+  }
+}
